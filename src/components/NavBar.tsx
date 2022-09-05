@@ -25,7 +25,7 @@ function NavBar() {
 				className={width > 600 ? "absolute left-4 top-3 cursor-pointer" : "hidden"}
 				onClick={onOpen}
 			/>
-			<div className={width > 600 ? "hidden" : "flex flex-col gap-4 items-center"}>
+			<div className={width > 600 ? "hidden" : "flex flex-col gap-4 items-center absolute bottom-0"}>
 				<div className="bg-[#1ECCB8] h-[0.3rem] rounded-lg w-[30vw]" />
 				<div className="bg-[#1ECCB8] rounded-t-3xl h-[8vh] w-screen" onClick={onOpen}>
 					<div className="flex justify-between mx-20 h-full items-center">
@@ -53,7 +53,7 @@ function NavBar() {
 						{width < 600 && (
 							<div className="h-1 rounded-xl w-[40%] bg-white mt-2"></div>
 						)}
-						<div className="flex gap-16 flex-col mt-20">
+						<div className={`flex gap-16 flex-col ${ width > 600 ? "mt-32" : "mt-20"}`}>
 							<div className="w-[320px] h-[150px] bg-[url('/public/purplebox.png')] rounded-xl py-5 px-4 flex flex-col justify-between text-lg font-baloo-2 text-white font-bold">
 								<div className="flex gap-2">
 									<img src="/hat.png" alt="chapéu" className="w-8 h-8" />
@@ -74,6 +74,10 @@ function NavBar() {
 									<p>Prédio CCT</p>
 								</div>
 							</div>
+						</div>
+						<div className={`flex flex-col items-center text-lg font-baloo-2 text-white font-bold absolute ${ width < 600 ? "bottom-2" : "top-4" }`}>
+							<p>Ciência da Computação</p>
+							<p>2° Período B</p>
 						</div>
 					</DrawerBody>
 				</DrawerContent>

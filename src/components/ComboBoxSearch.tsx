@@ -15,13 +15,13 @@ export default function ComboBoxSearch({ infos }: ComboBoxSearchProps) {
 
 	const filtered =
 		query === ""
-			? infos
+			? []
 			: infos.filter((person) =>
 					person.name
 						.toLowerCase()
 						.replace(/\s+/g, "")
 						.includes(query.toLowerCase().replace(/\s+/g, ""))
-			  )
+			  ).slice(0,4)
 
 	return (
 		<div className="w-full">
@@ -46,7 +46,7 @@ export default function ComboBoxSearch({ infos }: ComboBoxSearchProps) {
 						leaveTo="opacity-0"
 						afterLeave={() => setQuery("")}
 					>
-						<Combobox.Options className="relative mt-1 max-h-56 w-full rounded-md bg-white py-1 text-base shadow-lg focus:outline-none sm:text-sm overflow-hidden">
+						<Combobox.Options className={ query === "" ? "hidden" : "relative mt-1 w-full rounded-md bg-white py-1 text-base shadow-lg focus:outline-none sm:text-sm overflow-scroll"}>
 							{filtered.length === 0 && query !== "" ? (
 								<div className="relative cursor-default select-none py-2 px-4 text-gray-700">
 									Nothing found.
