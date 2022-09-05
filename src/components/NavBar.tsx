@@ -17,15 +17,15 @@ function NavBar() {
 	const { isOpen, onOpen, onClose } = useDisclosure()
 	const { width } = useWindowDimensions()
 
-	
+
 	return (
 		<>
 			<List
 				size={32}
-				className={width > 400 ? "absolute left-4 top-3 cursor-pointer" : "hidden"}
+				className={width > 600 ? "absolute left-4 top-3 cursor-pointer" : "hidden"}
 				onClick={onOpen}
 			/>
-			<div className={width > 400 ? "hidden" : "flex flex-col gap-4 items-center"}>
+			<div className={width > 600 ? "hidden" : "flex flex-col gap-4 items-center"}>
 				<div className="bg-[#1ECCB8] h-[0.3rem] rounded-lg w-[30vw]" />
 				<div className="bg-[#1ECCB8] rounded-t-3xl h-[8vh] w-screen" onClick={onOpen}>
 					<div className="flex justify-between mx-20 h-full items-center">
@@ -43,14 +43,14 @@ function NavBar() {
 			<Drawer
 				onClose={onClose}
 				isOpen={isOpen}
-				size={width > 400 ? "sm" : "xl"}
-				placement={width > 400 ? "left" : "bottom"}
+				size={width > 600 ? "sm" : "xl"}
+				placement={width > 600 ? "left" : "bottom"}
 			>
 				<DrawerOverlay />
-				<DrawerContent className={width > 400 ? "h-screen" : "h-[85vh]"}>
+				<DrawerContent className={width > 600 ? "h-screen" : "h-[85vh]"}>
 					<DrawerCloseButton />
 					<DrawerBody className="bg-[#1ECCB8] flex items-center flex-col">
-						{width < 400 && (
+						{width < 600 && (
 							<div className="h-1 rounded-xl w-[40%] bg-white mt-2"></div>
 						)}
 						<div className="flex gap-16 flex-col mt-20">
