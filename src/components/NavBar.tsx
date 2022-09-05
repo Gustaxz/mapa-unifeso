@@ -17,6 +17,7 @@ function NavBar() {
 	const { isOpen, onOpen, onClose } = useDisclosure()
 	const { width } = useWindowDimensions()
 
+	
 	return (
 		<>
 			<List
