@@ -27,7 +27,7 @@ function NavBar() {
 			/>
 			<div className={width > 600 ? "hidden" : "flex flex-col gap-4 items-center absolute bottom-0"}>
 				<div className="bg-[#1ECCB8] h-[0.3rem] rounded-lg w-[30vw]" />
-				<div className="bg-[#1ECCB8] rounded-t-3xl h-[8vh] w-screen" onClick={onOpen}>
+				<div className="bg-[#1ECCB8] rounded-t-3xl h-[8vh] w-screen" onTouchMove={onOpen}>
 					<div className="flex justify-between mx-20 h-full items-center">
 						<div className="flex gap-3 items-center">
 							<Buildings size={32} />
@@ -48,7 +48,6 @@ function NavBar() {
 			>
 				<DrawerOverlay />
 				<DrawerContent className={width > 600 ? "h-screen" : "h-[85vh]"}>
-					<DrawerCloseButton />
 					<DrawerBody className="bg-[#1ECCB8] flex items-center flex-col">
 						{width < 600 && (
 							<div className="h-1 rounded-xl w-[40%] bg-white mt-2"></div>
